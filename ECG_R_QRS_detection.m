@@ -77,7 +77,7 @@ ax(3)=subplot(413);plot(t,org_spikes);axis tight;title('R peaks');
 end
 
 binary =abs(org_spikes)>0;
-% find consequtive detected SPIKE blinking samples
+% find consequtive detected spike samples
 E = binary(2:end)-binary(1:end-1);
 sise = size(binary);
 
