@@ -23,6 +23,9 @@ subplot(4,1,1);plot(t,ecg); title('original ECG signal')
 axis tight;
 end
 ecg=ecg-mean(ecg);
+
+
+
 % % % % % d1= fdesign.bandpass('N,Fst1,Fp1,Fp2,Fst2,C',40,0.01,0.16,10,12,fs);%50,0.01,0.16,45,50.5,fs);%36
 % % % % % Hd1=design(d1,'equiripple');
 % % % % % ecg1=filter(Hd1,ecg);
@@ -59,7 +62,9 @@ for i=1:length(ecg)
     end
 end
 % % % % % % % % % %   [ecg, cost] = tvd_mm(ecg, 4, 5);
-% spike detection
+
+
+%% spike detection
 threshold=abs( 1*1/length(ecg)*sum((ecg))+3*std((ecg)) ); %2 is good
 spikes=zeros(size(ecg));
 
